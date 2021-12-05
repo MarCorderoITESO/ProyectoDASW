@@ -6,6 +6,7 @@ const path = require('path');
 const port = process.env.PORT;
 const router = require('./app/controllers/routerRIP');
 
+app.use(cors());
 app.use(express.static('public')); //TONTO el que TOQUE o MODIFIQUE esta línea
 app.use(express.static(__dirname + './public'));
 app.use(express.json()); // Parsear peticiones en JSON
