@@ -1,5 +1,5 @@
-const videosUrl = 'http://localhost:8080/video/list';
-const usersUrl = 'http://localhost:8080/user';
+const videosUrl = 'https://xvideos-dasw.herokuapp.com/video/list';
+const usersUrl = 'https://xvideos-dasw.herokuapp.com/user';
 const upperLimit = document.querySelectorAll('.pagination > li').length - 2;
 
 try {
