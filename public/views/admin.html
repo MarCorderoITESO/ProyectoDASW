@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Registro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <style>
+        @media (max-width: 699px) {
+            body {
+                overflow-y: scroll;
+            }
+
+            #vr {
+                opacity: 0;
+            }
+        }
+
+        @media (min-width: 700px) {
+            body {
+                overflow-y: scroll;
+            }
+
+            #vr {
+                opacity: 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                overflow-y: hidden;
+            }
+
+            #vr {
+                opacity: 1;
+            }
+        }
+
+        hr {
+            background-color: black !important;
+        }
+
+        #userContainer {
+            overflow-y: scroll;
+            height: 580px;
+            transform: translateY(-10px);
+        }
+
+        h3 {
+            margin-bottom: 10%;
+            color: #f6a2bf;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .contain:nth-of-type(2),
+        #selectedUser {
+            text-align: center;
+        }
+
+        #adminTool {
+            text-align: left;
+        }
+
+        #searchUserAdmin {
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        #vr {
+            border-left: 1px solid black;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vr"></div>
+
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/login" id="logoNav">
+            <span class="xvPink">XV</span><span class="appliedFontLight">ideos</span>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="container my-2 mx-0 col-12">
+        <div class="row row-space">
+            <div class="contain col-lg-6">
+                <h2>Todos los usuarios</h2>
+                <hr>
+                <div id="userContainer"></div>
+            </div>
+            <div class="contain col-lg-6">
+                <input type="text" name="serchUser" id="searchUserAdmin" placeholder="🔍 Buscar usuario">
+                <hr class="mt-4">
+                <div id="adminTool">
+                    <h4 id="selectedUser">UsuarioN</h4>
+                    <h4>Reseñas</h4>
+                    <div id="retrievedReviews"></div><br>
+                    <h4>Videos</h4>
+                    <div id="retrievedVideos"></div><br>
+                </div>
+                <input type="button" value="Eliminar cuenta" class="btn pinkBg whiteText w-100">
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="ajax_handler.js"></script>
+    <script src="utils_html.js"></script>
+    <script src="admin_utils.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

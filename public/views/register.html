@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Registro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .CenterBtn {
+            margin: 0;
+            top: 50%;
+        }
+
+        #btnRegister {
+            background-color: #f6a2bf;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+            padding: 14px 40px;
+        }
+
+        #btnRegister:hover {
+            background-color: #f87ba7;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/login" id="logoNav">
+            <span class="xvPink">XV</span><span class="appliedFontLight">ideos</span>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+            <span style="color: white; font-size: 200%">Registro</span>
+        </div>
+    </nav>
+
+    <form action="" method="post" class="container justify-content-center mt-5">
+        <div class="d-flex flex-column">
+            <label for="userRegister">Ingresa tu email</label><br>
+            <input type="email" name="user" id="userRegister" placeholder="Email" required autocomplete="off"><br>
+        </div>
+        <div class="break"></div>
+        <div class="d-flex flex-column">
+            <label for="passRegister">Contraseña</label><br>
+            <input type="password" name="pass" id="passRegister" placeholder="Contraseña" required
+                autocomplete="off"><br>
+        </div>
+        <div class="break"></div>
+        <div class="d-flex flex-column">
+            <label for="passConfirmRegister">Repite tu contraseña</label><br>
+            <input type="password" name="passConfirm" id="passConfirmRegister" placeholder="Contraseña again" required
+                autocomplete="off"><br>
+        </div>
+        <div class="break"></div>
+        <div class="d-flex flex-column">
+            <label for="categories">Ingresa tus categorías de video favoritas</label><br>
+            <input type="text" name="pass" id="categories" placeholder="Quinceañeras bajo el Matute Remus"><br>
+        </div>
+        <div class="break"></div>
+        <div class="CenterBtn my-3">
+            <input type="button" id="btnRegister" onclick="" value="Enviar">
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

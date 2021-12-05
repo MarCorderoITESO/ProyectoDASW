@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Subir video</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+
+    <style>
+        @media (max-width: 699px) {
+            img {
+                width: 426px;
+                height: 240px;
+            }
+
+            #title {
+                width: 426px;
+                height: 30px;
+                font-size: medium;
+            }
+
+            #vidDesc,
+            #vidTags {
+                width: 426px;
+            }
+
+            input[type="file"] {
+                font-size: medium;
+            }
+
+            #imgURL, #vidURL {
+                position: relative;
+                width: 213px;
+            }
+        }
+
+        @media (min-width: 700px) {
+            img {
+                width: 640px;
+                height: 360px;
+            }
+
+            #title {
+                width: 640px;
+                height: 40px;
+                font-size: large;
+            }
+
+            #vidDesc,
+            #vidTags {
+                width: 640px;
+            }
+
+            input[type="file"] {
+                font-size: large;
+            }
+
+            #imgURL, #vidURL {
+                position: relative;
+                width: 320px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            img {
+                width: 854px;
+                height: 480px;
+            }
+
+            #title {
+                width: 854px;
+                height: 50px;
+                font-size: x-large;
+            }
+
+            #vidDesc,
+            #vidTags {
+                width: 854px;
+            }
+
+            input[type="file"] {
+                font-size: x-large;
+            }
+
+            #imgURL, #vidURL {
+                position: relative;
+                width: 427px;
+            }
+        }
+
+        #mainVid,
+        #vidTags,
+        input[type="file"] {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #title {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #vidDesc {
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            resize: none !important;
+            height: 200px;
+        }
+
+        #publishVid {
+            width: 100%;
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" id="mainNav"></nav>
+
+    <h2 class="mt-3 text-center">Alta de video</h2>
+
+    <input type="text" name="videoTitle" id="title" placeholder="Título del video">
+    <img src="../img/placeholder2.jpg" alt="" id="mainVid">
+
+    <!-- <input type="file" value="Examinar archivos" class="my-3"> -->
+
+    <div id="urls" class="d-flex justify-content-center">
+        <input type="text" name="img" id="imgURL" placeholder="URL de imagen">
+        <input type="text" name="vid" id="vidURL" placeholder="URL de video">
+    </div>
+
+    <textarea name="videoDesc" id="vidDesc" placeholder="Descripción del video"></textarea>
+    <input type="text" name="videoTags" id="vidTags" placeholder="Etiqueta del video" class="mb-4">
+
+    <div class="d-flex justify-content-center">
+        <input type="button" value="Publicar video" class="btn pinkBg whiteText" id="publishVid">
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="ajax_handler.js"></script>
+    <script src="insertNav.js"></script><!-- Para navbar -->
+    <script src="utils_html.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

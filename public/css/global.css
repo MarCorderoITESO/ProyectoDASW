@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'logo-font';
+    src: url("./Baby\ Child.ttf");
+}
+
+.noSelect, .noSelect::before, .noSelect::after {
+    -webkit-touch-callout: none;
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 20px;
+}
+
+.pinkText {
+    color: #f6a2bf;
+}
+
+.whiteText {
+    color: white !important;
+}
+
+.pinkBg {
+    background-color: #f6a2bf !important;
+}
+
+.xvPink {
+    color: #f6a2bf;
+    font-family: "logo-font";
+}
+
+.appliedFont {
+    font-family: "logo-font";
+}
+
+.appliedFontLight {
+    font-family: "logo-font";
+    color: white;
+}
+
+.navbar {
+    background-color: black;
+}
+
+#logoNav {
+    font-size: 200%;
+}
+
+.navBtn {
+    border-color: #f6a2bf !important;
+    color: white !important;
+}

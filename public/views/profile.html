@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Perfil</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+
+    <style>
+        div>h3 {
+            display: inline;
+        }
+
+        #info>h3:first-of-type {
+            margin-right: 50%;
+        }
+
+        .CenterBtn {
+            text-align: center;
+        }
+
+        .btnPost {
+            background-color: #f6a2bf;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            padding: 14px 40px;
+            width: 100% !important;
+        }
+
+        #pass>div {
+            display: inline-block;
+        }
+
+        #btnPostPass {
+            background-color: #0c0c0c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            padding: 14px 40px;
+            width: 100%;
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" id="mainNav"></nav>
+
+    <h3 class="mx-3 my-3">Perfil de usuario</h3>
+    <hr>
+    <div id="info" class="mx-3 my-3">
+        <h3>Correo: is727272@iteso.mx<span id="profMail"></span></h3>
+        <h3>Videos subidos: 0<span id="profQtyVid"></span></h3>
+    </div>
+    <hr>
+    <!-- <div class="CenterBtn mb-3 mx-3">
+        <button type="submit" class="btnPost">Subir video</button>
+        <a href="newVideo" class="btn btnPost bgPink">Subir video</a>
+    </div> -->
+    <div class="justify-content-center mb-3 mx-3">
+        <a href="newVideo" class="btn pinkBg whiteText w-100 py-3">Subir video</a>
+    </div>
+    <hr>
+    <div id="playlist" class="mx-3 my-3">
+        <h3 class="mx-3 my-3">Mi lista de reproducción</h3>
+        <span></span>
+    </div>
+    <hr>
+    <div id="uploaded" class="mx-3 my-3">
+        <h3 class="mx-3 my-3">Videos subidos</h3>
+        <span></span>
+    </div>
+    <hr>
+    <div id="changePass" class="mx-3 my-3">
+        <h3 class="mx-3 my-3">Cambio de contraseña</h3>
+        <form action="" method="post">
+            <div id="pass">
+                <div class="mx-4 my-3">
+                    <p>Contraseña actual</p>
+                    <input type="text" id="oldPass" name="shittyPass" required minlength="4" maxlength="8" size="30"
+                        placeholder="Contraseña actual">
+                </div>
+                <div id="nwPass" class="mx-4 my-3">
+                    <p>Nueva contraseña</p>
+                    <input type="text" id="newPass" name="goodPass" required minlength="4" maxlength="8" size="30"
+                        placeholder="Nueva contraseña">
+                </div>
+                <div id="rnwPass" class="mx-4 my-3">
+                    <p>Confirmar contraseña</p>
+                    <input type="text" id="repeatGoodPass" name="repeatPass" required minlength="4" maxlength="8"
+                        size="30" placeholder="Confirmar contraseña">
+                </div>
+                <div class="mx-4" id="btnPass">
+                    <button type="submit" class="btnPost">Confirmar cambio</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="mb-3 mx-3">
+        <button type="submit" id="btnPostPass">Eliminar perfil</button>
+    </div>
+    </form>
+
+
+    <!-- Optional JavaScript -->
+    <script src="ajax_handler.js"></script>
+    <script src="insertNav.js"></script><!-- Para navbar -->
+    <script src="utils_html.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
