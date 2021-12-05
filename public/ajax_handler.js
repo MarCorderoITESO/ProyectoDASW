@@ -1,11 +1,11 @@
 "use strict";
 
 async function loadVideos(url) {
-    return await fetch('http://localhost:8080/video/list').then(function(response) {return response.json()})
+    return await fetch('https://xvideos-dasw.herokuapp.com/video/list').then(function(response) {return response.json()})
 }
 
 async function loadUsers(url) {
-    return await fetch('http://localhost:8080/user').then(function(response) {return response.json()})
+    return await fetch('https://xvideos-dasw.herokuapp.com/user').then(function(response) {return response.json()})
 }
 
 // function loadPlaylist(url, productList, onSuccess, onError) {
