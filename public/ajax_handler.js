@@ -26,7 +26,7 @@ async function loadUsers(url) {
 function searchQuery(event) {
     let query = document.getElementById("categorySearch").value + ":" + document.getElementById("titleSearch").value;
     let xhr = new XMLHttpRequest();
-    let url = 'https://xvideos-dasw.herokuapp.com/login/video?query=' + query;
+    let url = 'https://xvideos-dasw.herokuapp.com/video?query=' + query;
 
     xhr.open('GET', url);
 
