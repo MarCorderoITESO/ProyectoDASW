@@ -1,13 +1,23 @@
 "use strict";
-let lastID = sessionStorage.lastVisited;
 
-async function changeVideoDisplay() {
-    getVideo(lastID).then(video => {
-        titleText.innerText = video._title;
-        vidContain.setAttribute("src", video._url);
-        vidDesc.innerText = video._description;
-        console.log(video._url);
-    });
+require("dotenv").config();
+
+const datahandler = require('../../app/controllers/handler');
+const jwt = require('jsonwebtoken');
+
+
+let token = datahandler.getAccessT();
+
+console.log(token);
+
+async function changeProfileDisplay(){
+    getProfile(token).then(profile => {
+        console.log(profile);
+        let myUser = jwt.decode(token)
+        profMail.innerText = "Correo: "+ myUser._email;
+        profQtyVid.innerText = "Videos subidos: " + myUser._postedVideos;
+
+    })
 }
 
-changeVideoDisplay();
+changeProfileDisplay();

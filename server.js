@@ -4,8 +4,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-// const port = process.env.PORT;
-const port = 8080;
+const port = process.env.PORT;
 const router = require('./app/controllers/routerRIP');
 
 app.use(cors());

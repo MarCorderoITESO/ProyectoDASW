@@ -7,6 +7,7 @@ const User = require('./User');
 const videos = JSON.parse(fs.readFileSync('./app/data/videos.json')).map(Video.createFromObject);
 const users = JSON.parse(fs.readFileSync('./app/data/users.json')).map(User.createFromObject);
 const reviews = [];
+let AccessT;
 
 function appendToFile(elem, fileName) {
     let contentFile = JSON.parse(fs.readFileSync('./app/data/' + fileName + '.json'));
@@ -61,6 +62,12 @@ function getUserByMail(email){
     return users.find(user => user._email  == email);
 }
 
+function setAccessT(val){
+    AccessT = val; 
+ }
+ function getAccessT(){
+     return AccessT;
+ }
 
 /* ---- PARTE DE VIDEOS ---- */
 function createVideo(video) { // Create
@@ -132,6 +139,8 @@ exports.getUsers = getUsers;
 exports.createUser = createUser;
 exports.deleteUser = deleteUser;
 exports.getUserByMail = getUserByMail;
+exports.setAccessT = setAccessT;
+exports.getAccessT = getAccessT;
 
 exports.getVideoById = getVideoById;
 exports.getVideos = getVideos;

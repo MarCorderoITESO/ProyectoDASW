@@ -35,14 +35,13 @@ router.get('*', (req, res) => res.sendFile('error.html', views));
 router.post('/login', (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
-    let users = dataHandler.getUserByMail(email);
-    if (users) {
-        bcrypt.compare(password, users._password, (err, rest) => {
+    let user = dataHandler.getUserByMail(email);
+    if (user) {
+        bcrypt.compare(password, user._password, (err, rest) => {
             if (rest) {
-                // const accessToken = jwt.sign({user}, process.env.ACCESS_TOKEN_SECRET);
-                //console.log(jwt.decode(accessToken));
+                const accessToken = jwt.sign({user}, process.env.ACCESS_TOKEN_SECRET);
                 res.status(200).redirect('/home');
-                // authenticateToken(accessToken, user);
+                authenticateToken(accessToken, user);
             } else {
                 res.status(403).sendFile("loginError.html", views);
             }
