@@ -64,7 +64,7 @@
         </div>
     </nav>
 
-    <form action="" method="post" class="container justify-content-center mt-5">
+    <form action="/register" method="post" class="container justify-content-center mt-5" id="registerForm">
         <div class="d-flex flex-column">
             <label for="userRegister">Ingresa tu email</label><br>
             <input type="email" name="user" id="userRegister" placeholder="Email" required autocomplete="off"><br>
@@ -73,26 +73,25 @@
         <div class="d-flex flex-column">
             <label for="passRegister">Contraseña</label><br>
             <input type="password" name="pass" id="passRegister" placeholder="Contraseña" required
-                autocomplete="off"><br>
+                autocomplete="off" minlength="6"><br>
         </div>
         <div class="break"></div>
         <div class="d-flex flex-column">
             <label for="passConfirmRegister">Repite tu contraseña</label><br>
-            <input type="password" name="passConfirm" id="passConfirmRegister" placeholder="Contraseña again" required
-                autocomplete="off"><br>
+            <input type="password" name="passConfirm" id="passConfirmRegister" placeholder="Repite tu contraseña" required
+                autocomplete="off" minlength="6"><br>
         </div>
         <div class="break"></div>
         <div class="d-flex flex-column">
-            <label for="categories">Ingresa tus categorías de video favoritas</label><br>
-            <input type="text" name="pass" id="categories" placeholder="Quinceañeras bajo el Matute Remus"><br>
+            <label for="categories">Ingresa tus categorías de video favoritas (separadas por comas)</label><br>
+            <input type="text" name="categories" id="categoriesRegister" placeholder="Quinceañeras bajo el Matute Remus" autocomplete="off"><br>
         </div>
         <div class="break"></div>
         <div class="CenterBtn my-3">
-            <input type="button" id="btnRegister" onclick="" value="Enviar">
+            <input type="submit" id="btnRegister" value="Enviar" form="registerForm">
         </div>
     </form>
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

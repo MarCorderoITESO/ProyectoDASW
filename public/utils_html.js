@@ -1,5 +1,7 @@
-const videosUrl = 'https://xvideos-dasw.herokuapp.com/video/list';
-const usersUrl = 'https://xvideos-dasw.herokuapp.com/user';
+// const videosUrl = 'https://xvideos-dasw.herokuapp.com/video/list';
+const videosUrl = 'http://localhost:8080/video/list';
+// const usersUrl = 'https://xvideos-dasw.herokuapp.com/user';
+const usersUrl = 'https://localhost:8080/user';
 const upperLimit = document.querySelectorAll('.pagination > li').length - 2;
 
 try {
@@ -60,5 +62,6 @@ try {
 }
 
 function redirectToVid(videoID) {
+    sessionStorage.setItem("lastVisited",videoID);
     window.location.href = '/video/' + videoID;
 }

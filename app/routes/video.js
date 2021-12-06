@@ -7,7 +7,7 @@ const views = {root: "public/views"};
 
 router.route('/')
     .get((req, res) => {
-        let query = req.query.query; // localhost:8080/video?query=Chambelan:Peru
+        let query = req.query.query;
         if (query == undefined) {
             res.status(200).json(dataHandler.getVideos());
         } else {
@@ -21,19 +21,30 @@ router.route('/list')
         res.status(200).json(dataHandler.getVideos());
     });
 
+router.route('/list/:id')
+    .get((req, res) => {
+        let videoID = dataHandler.getVideoById(req.params.id);
+
+        if(videoID) {
+            res.set('Content-Type','application/json');
+            res.status(200).json(videoID);
+        } else {
+            res.type("text/plain; charset=utf-8");
+            res.status(404).send("No encontrado");
+        }
+    });
+
 router.route('/:id')
     .get((req, res) => {
         let videoID = dataHandler.getVideoById(req.params.id);
         
         if(videoID) {
-            // res.set('Content-Type','text/html; charset=utf-8');
-            // res.status(200).sendFile('video.html', views);
-            res.sendFile('video.html', views);
+            res.type("text/html; charset=utf-8");
+            res.status(200).sendFile('video.html', views);
+        } else {
+            res.type("text/html; charset=utf-8");
+            res.status(404).sendFile("errorVid.html", views);
         }
-        // } else {
-        //     res.type("text/html; charset=utf-8");
-        //     res.status(404).sendFile("error.html", views);
-        // }
     });
 
 module.exports = router;

@@ -3,42 +3,15 @@
 const fs = require('fs');
 const Video = require('./Video');
 const User = require('./User');
-const {
-    MongoClient
-} = require('mongodb');
-const conURL = "mongodb+srv://AdminXV:quinceIlusiones@cluster0.9ysgm.mongodb.net/test?authSource=admin&replicaSet=atlas-thva97-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
-const parsHit = {
-    useNewUrlParser: true
-};
-var users;
-
-MongoClient.connect(conURL, parsHit, (err, client) => {
-    if (err) {
-        console.log('No se pudo conectar al servidor de MongoDB');
-        return;
-    }
-    console.log('Connected to MongoDB server')
-    const db = client.db("Users");
-    db.collection('Registered_Users').find().toArray().then(function(data){
-        try {
-            users = data.map(User.createFromObject);
-            console.log(users);
-            // client.close();
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
-    console.log(users);
-});
 
 const videos = JSON.parse(fs.readFileSync('./app/data/videos.json')).map(Video.createFromObject);
-// const users = JSON.parse(fs.readFileSync('./app/data/users.json')).map(User.createFromObject);
-// const reviews = [];
+const users = JSON.parse(fs.readFileSync('./app/data/users.json')).map(User.createFromObject);
+const reviews = [];
 
 function appendToFile(elem, fileName) {
-    let contentFile = fs.readFileSync('./app/data/' + fileName + '.json');
-    let toWrite = JSON.stringify(JSON.parse(contentFile)).split("]")[0] + ", " + JSON.stringify(elem) + ']';
+    let contentFile = JSON.parse(fs.readFileSync('./app/data/' + fileName + '.json'));
+    // let toWrite = JSON.stringify(JSON.parse(contentFile)).split("]")[0] + ", " + JSON.stringify(elem) + ']';
+    let toWrite = JSON.stringify(contentFile).substr(0,JSON.stringify(contentFile).length - 1) + ", " + JSON.stringify(elem) + ']';
     fs.writeFileSync("./app/data/" + fileName + ".json", toWrite);
 }
 
@@ -65,23 +38,7 @@ function modifyElemInFile(index, modifiedProperties, fileName) {
 
 /* ---- PARTE DE USUARIOS ---- */
 function getUsers() {
-    // return users;
-    MongoClient.connect(conURL, parsHit, (err, client) => {
-        if (err) {
-            console.log('No se pudo conectar al servidor de MongoDB');
-            return;
-        }
-        console.log('Connected to MongoDB server')
-        const db = client.db("Users");
-        db.collection('Registered_Users').find().toArray().then(function(data){
-            try {
-                return data.map(User.createFromObject);
-                // client.close();
-            } catch (e) {
-                console.log(e);
-            }
-        });
-    });
+    return users;
 }
 
 function createUser(newUser) { // Create
@@ -98,6 +55,10 @@ function deleteUser(email) { // Delete
             return;
         }
     }
+}
+
+function getUserByMail(email){
+    return users.find(user => user._email  == email);
 }
 
 
@@ -170,6 +131,7 @@ function deleteUserReview(VideoID, email) { // Delete bullshit
 exports.getUsers = getUsers;
 exports.createUser = createUser;
 exports.deleteUser = deleteUser;
+exports.getUserByMail = getUserByMail;
 
 exports.getVideoById = getVideoById;
 exports.getVideos = getVideos;

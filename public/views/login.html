@@ -65,20 +65,20 @@
         <p id="logoLogin"><span class="xvPink">XV</span><span class="appliedFont">ideos</span></p>
     </div>
 
-    <form action="" method="post" class="container justify-content-center">
+    <form action="/login" method="post" class="container justify-content-center" id="login-data">
         <div class="d-flex flex-column">
             <label for="userLogin">Usuario</label><br>
-            <input type="text" name="user" id="userLogin" placeholder="Usuario"><br>
+            <input type="text" name="email" id="userLogin" placeholder="Usuario" autocomplete="off"><br>
         </div>
         <div class="break"></div>
         <div class="d-flex flex-column">
             <label for="passLogin">Contraseña</label><br>
-            <input type="password" name="pass" id="passLogin" placeholder="Contraseña"><br>
+            <input type="password" name="password" id="passLogin" placeholder="Contraseña" autocomplete="off"><br>
         </div>
         <div class="break"></div>
         <div class="CenterBtn my-5">
-            <!-- <input type="button" id="btnLogIn" value="Entrar"> -->
-            <a href="/home" class="btn" id="btnLogIn">Entrar</a>
+            <input type="submit" id="btnLogIn" value="Entrar" form="login-data">
+            <!-- <a href="/home" class="btn" id="btnLogIn">Entrar</a> -->
         </div>
     </form>
 

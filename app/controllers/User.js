@@ -15,8 +15,7 @@ class UserReview {
 }
 
 class User {
-    constructor(userId, email, password, categories, role){
-        this._userId = userId;
+    constructor(email, password, categories, role){
         this.email = email;
         this.password = password;
         this.categories = categories;
@@ -100,7 +99,6 @@ class User {
         User.cleanObject(newUser);
 
         let user = new User(
-            newUser.userId,
             newUser.email,
             newUser.password,
             newUser.categories,
@@ -111,7 +109,7 @@ class User {
     }
 
     static cleanObject(obj) {
-        let properties = ["userId","email", "password", "categories", "role"];
+        let properties = ["email", "password", "categories", "role"];
 
         for (let key in obj) {
             if(key[0] == "_") {
